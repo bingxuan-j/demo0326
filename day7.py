@@ -1,5 +1,5 @@
 print("配置管理器")
-
+print("alalla")
 class ConfigManager:
     """配置管理器"""
     _instance = None
@@ -81,5 +81,5 @@ class TransitionError(Error):
     self.message = message
   def __str__(self):
     return f"{self.previous} -> {self.next}: {self.message}"
-  raise TransitionError(32,22, "The value must be > 0")
+  #raise TransitionError(32,22, "The value must be > 0")
 
