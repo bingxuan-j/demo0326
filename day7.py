@@ -1,4 +1,5 @@
 print("配置管理器")
+
 class ConfigManager:
     """配置管理器"""
     _instance = None
@@ -61,24 +62,24 @@ car3 = CarFactory.create_car("truck")
 car3.display_info()
 
 
-# class Error(Exception):
-#   """Base class for exceptions in this module."""
-#   pass 
-# class InputError(Error):
-#   """Exception raised for errors in the input.
-#   Attributes:
-#     expression -- input expression in which the error occurred
-#     message -- explanation of the error
-#   """  
-#   def __init__(self, expression, message):
-#     self.expression = expression
-#     self.message = message 
-# class TransitionError(Error):
-#   def __init__(self, previous, next, message):
-#     self.previous = previous
-#     self.next = next
-#     self.message = message
-#   def __str__(self):
-#     return f"{self.previous} -> {self.next}: {self.message}"
-#   raise TransitionError(32,22, "The value must be > 0")
+class Error(Exception):
+  """Base class for exceptions in this module."""
+  pass 
+class InputError(Error):
+  """Exception raised for errors in the input.
+  Attributes:
+    expression -- input expression in which the error occurred
+    message -- explanation of the error
+  """  
+  def __init__(self, expression, message):
+    self.expression = expression
+    self.message = message 
+class TransitionError(Error):
+  def __init__(self, previous, next, message):
+    self.previous = previous
+    self.next = next
+    self.message = message
+  def __str__(self):
+    return f"{self.previous} -> {self.next}: {self.message}"
+  raise TransitionError(32,22, "The value must be > 0")
 
